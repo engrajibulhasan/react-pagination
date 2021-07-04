@@ -11,13 +11,18 @@ function App() {
   const resultPerPage=1;
   const pageVisited=pageNumber*resultPerPage;
 
+  //Handle Click Events and return the Object
+  const handleClickEvent=(clickedData)=>{
+    console.log(clickedData);
+  }
+
   //users.slice(0,10)
   const displayResults=categories.slice(pageVisited,pageVisited+resultPerPage).map((category,index)=>{
     return(
         <div key={category.id} className="items container">
           <h3>category: {category.category}</h3>
           <hr/>
-          <Subcategory key={category.id} category={category}/>
+          <Subcategory key={category.id} category={category} handleClickEvent={handleClickEvent}/>
         </div>
     )
   })

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import subCategorJSON from './sub_category_list.json';
 import ReactPaginate from 'react-paginate';
 const Subcategory = (props) => {
@@ -6,8 +6,8 @@ const Subcategory = (props) => {
     
     //Sub Category State Management (update from JSON)
     const [subCategories,setSubCategories]=useState(subCategorJSON.filter(mainData=> mainData.category===category)?subCategorJSON.filter(mainData=> mainData.category===category):[]);
-    //Mount and Unmount management
-    console.log(subCategories);
+   
+    //console.log(subCategories);
 
 
     //Pagination Settings
@@ -15,14 +15,25 @@ const Subcategory = (props) => {
     const resultPerPage=3;
     const pageVisited=pageNumber*resultPerPage;
 
-     //users.slice(0,10)
+    //users.slice(0,10)
     const displayResults=subCategories.slice(pageVisited,pageVisited+resultPerPage).map((subcategory,index)=>{
         return(
-            <div key={subcategory.id} className="single-item col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div 
+            key={subcategory.id} 
+            className="single-item col-lg-4 col-md-4 col-sm-4 col-xs-12"
+            onClick={()=>props.handleClickEvent(
+                {
+                    category_id:id,
+                    category_name:category,
+                    sub_category_id:subcategory.id,
+                    sub_category_name:subcategory.sub_category
+
+                }
+            )}
+            >
                 <div className="inner-box">
                 <h3>{subcategory.sub_category}</h3>
                 </div>
-            
             </div>
         )
     })
