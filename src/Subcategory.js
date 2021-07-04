@@ -42,8 +42,8 @@ const Subcategory = (props) => {
             {displayResults}
         </div>
         <ReactPaginate 
-            previousLabel={"Previous"}
-            nextLabel={"Next"}
+            previousLabel={"<"}
+            nextLabel={">"}
             pageCount={pageCount}
             onPageChange={handlePageChange}
             containerClassName={"paginationBttns"}

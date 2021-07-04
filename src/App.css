@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,300&display=swap');
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 a,a:hover{
   text-decoration:none !important
 }
@@ -21,10 +28,12 @@ a,a:hover{
   cursor:pointer;
   transition:500ms;
 }
+
 .single-item>.inner-box:hover{
   background-color: rgba(0, 131, 253, 0.692);
   color:white;
 }
+
 
 .items {
   border: 2px solid black;
@@ -37,8 +46,21 @@ a,a:hover{
 .items h3, .items p{
   margin: 0;
   padding:0;
+  font-weight: 300 !important;
+  font-family: 'Roboto', sans-serif;
 }
 
+.items h3{
+  text-align:center;
+}
+
+.items>h3 {
+  font-size: 16px;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  color: blue;
+  margin: 10px;
+}
 
 
 .paginationBttns {
@@ -50,25 +72,25 @@ a,a:hover{
 }
 
 .paginationBttns a {
-  padding: 10px;
-  margin: 8px;
+  padding: 5px 8px;
+  margin: 5px;
   border-radius: 5px;
-  border: 1px solid #2b2eff;
-  color: #2b2eff;
+  border: 1px solid rgba(0, 131, 253, 0.692);
+  color: rgba(0, 131, 253, 0.692);
   cursor: pointer;
 }
 
 .paginationBttns a:hover {
   color: white;
-  background-color: #2b2eff;
+  background-color: rgba(0, 131, 253, 0.692);
 }
 
 .paginationActive a {
   color: white;
-  background-color: #2b2eff;
+  background-color: rgba(0, 131, 253, 0.692);
 }
 
 .paginationDisabled a {
   color: black;
-  background-color: grey;
+  background-color:rgb(230, 230, 230);
 }
