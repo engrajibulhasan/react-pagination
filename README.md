@@ -1,4 +1,4 @@
-# React Pagination with Fake Dat
+# React Pagination with Fake Data
 
 ## Features
 - Pagination inside Pagination
