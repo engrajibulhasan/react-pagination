@@ -5,7 +5,8 @@ import './App.css';
 import Subcategory from './Subcategory';
 
 function App() {
-  const [categories,setCategories]= useState(JsonData.slice(0,900));
+  //State Management and fake data collection
+  const [categories,setCategories]= useState(JsonData);
   const [pageNumber,setPageNumber]= useState(0);
   const resultPerPage=1;
   const pageVisited=pageNumber*resultPerPage;
@@ -13,10 +14,10 @@ function App() {
   //users.slice(0,10)
   const displayResults=categories.slice(pageVisited,pageVisited+resultPerPage).map((category,index)=>{
     return(
-        <div className="items container">
-          <h3>category: {categories.category}</h3>
+        <div key={category.id} className="items container">
+          <h3>category: {category.category}</h3>
           <hr/>
-          <Subcategory category={category}/>
+          <Subcategory key={category.id} category={category}/>
         </div>
     )
   })
